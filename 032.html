@@ -4,21 +4,58 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
-    $(document).ready(function() {
-      $("#init").hide(0);
-      $("#start").click(function() {
+    $(document).ready(function () {
+      $("#talk").hide(0);
+      $("#start").click(function () {
         $("#main").hide(500);
-        $("#init").show(500);
+        $("#talk").show(500);
       });
-      $("#exit").click(function() {
+      $("#exit").click(function () {
         $("#main").show(500);
-        $("#init").hide(500);
+        $("#talk").hide(500);
       });
     });
+
   </script>
+  
+  <meta charset="utf-8">
+  <title>HTML</title>
+
+  <style>
+    #name {
+      position: absolute;
+      top: 170px;
+      left: 30px;
+    }
+
+    #text {
+      position: absolute;
+      top: 220px;
+      left: 30px;
+    }
+
+    #percent {
+      position: absolute;
+      top: 30px;
+      left: 70px;
+    }
+
+    #percenttext {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+
+    #exit {
+      position: absolute;
+      top: 400px;
+      left: 400px;
+    }
+  </style>
 </head>
 
 <body>
+  <!-- 홈 화면 페이지-->
   <div id="main">
     <svg width="500" height="400">
 
@@ -48,13 +85,77 @@
       <br /><button id="review" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">다시보기</button>
     </div>
   </div>
-
-  <div id="init">
-    <div style="text-align: center;">
-      <br /><button id="exit" style=" padding:10px 50px 10px 50px; border-radius: 10px">돌아가기</button><br />
-    </div>
   </div>
 
+  <div id="talk">
+    <svg height="500" width="500">
+
+      <!-- 사람 -->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <!-- 말풍선 -->
+      <rect x="20" y="220" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+      <!-- 이름 말풍선 -->
+      <rect x="20" y="180" width="80" height="40" style="fill:blue;stroke-width:1;stroke:black;" />
+
+      <div id="name">
+        <h2>홍길동</h2>
+      </div>
+
+      <div id="text">
+        <p>혜지짱 어쩌구 저쩌구</p>
+      </div>
+
+      <div id="percent">
+        <progress value="20" max="100" id="lb"></progress>
+      </div>
+      <div id="percenttext">
+        <p>호감도</p>
+      </div>
+    </svg>
+  </div>
+
+  <!-- 말풍선 나오는 페이지-->
+  <div id="talk">
+    <svg height="500" width="500">
+
+      <!-- 사람 -->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <!-- 말풍선 -->
+      <rect x="20" y="220" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+      <!-- 이름 말풍선 -->
+      <rect x="20" y="180" width="80" height="40" style="fill:blue;stroke-width:1;stroke:black;" />
+
+      <div id="name">
+        <h2>홍길동</h2>
+      </div>
+
+      <div id="text">
+        <p>혜지짱 어쩌구 저쩌구</p>
+      </div>
+
+      <div id="percent">
+        <progress value="20" max="100" id="lb"></progress>
+      </div>
+      <div id="percenttext">
+        <p>호감도</p>
+      </div>
+
+      <div id="exit">
+        <br /><button id="start" style=" padding:10px 50px 10px 50px; border-radius: 10px">나가기</button><br />
+      </div>
+
+    </svg>
+  </div>
 </body>
 
 </html>
