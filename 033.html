@@ -6,12 +6,24 @@
 
         <style>
             #name{
+            position:absolute;
             top: 170px;
             left: 30px;
         }
             #text{
-            top: 100px;
-            left: 20px;
+            position:absolute;
+            top: 220px;
+            left: 30px;
+        }
+            #percent{
+            position:absolute;
+            top: 30px;
+            left: 70px;
+        }
+            #percenttext{
+            position:absolute;
+            top: 20px;
+            left: 10px;
         }
 
         </style>
@@ -38,13 +50,15 @@
           </div>
 
           <div id="text">
-            <p>홍길동</p>
+            <p>혜지짱 어쩌구 저쩌구</p>
           </div>
 
-          <div>
+          <div id="percent">
             <progress value="20" max="100" id="lb"></progress>
           </div>
-          <p>호감도</p>
+          <div id="percenttext">
+            <p>호감도</p>
+          </div>
 
           
 
