@@ -5,6 +5,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
 
+    var animating = false;
+
+    function lockButton(){
+      if(animating == false){
+        animating = true;
+        setTimeout(function () { animating = false }, 500); // 0.5 초 후에 다시 animating = false 처리.
+      }
+    }
+
     $(document).ready(function () {
       // 첫 로딩 시 초기화 하는 부분
 
@@ -74,27 +83,27 @@
       });
 
       $(".yes").click(function () {
-        currentTalk = 0;// 게임 시작 후 첫 화면
+        currentTalk = 1; // 게임 시작 후 첫 화면
         $("#main").fadeOut(500);
         $("#exit").fadeIn(500);
         $("#talk").fadeIn(500);
         $("#talk_2").fadeOut(500);
         $("#ending").fadeOut(500);
-        $("#choose ").fadeOut(500);
+        $("#choose").fadeOut(500);
         $("#anotherending").fadeOut(500);
         console.log("start");
       });
 
       $(".no").click(function () {
-        currentTalk = 0;// 게임 시작 후 첫 화면
-        $("#talk").fadeOut(500);
-        $("#exit").fadeIn(500);
+        currentTalk = 0; // 초기 메인 화면
         $("#main").fadeIn(500);
+        $("#exit").fadeOut(500);
+        $("#talk").fadeOut(500);
         $("#talk_2").fadeOut(500);
         $("#ending").fadeOut(500);
-        $("#choose ").fadeOut(500);
+        $("#choose").fadeOut(500);
         $("#anotherending").fadeOut(500);
-        console.log("start");
+        console.log("exit");
       });
 
     });
@@ -286,7 +295,7 @@
   </div>
 
   <!--엔딩화면-->
-  <div id="ending" style="position: absolute;" onclick="goNextTalk()">
+  <div id="ending" style="position: absolute;">
     <svg height="500" width="500">
 
       <!-- 사람 -->
@@ -365,7 +374,7 @@
   </div>
 
    <!-- 다른 엔딩화면-->
-   <div id="anotherending" style="position: absolute;" onclick="goNextTalk()">
+   <div id="anotherending" style="position: absolute;">
     <svg height="500" width="500">
 
       <!-- 사람 -->
@@ -409,6 +418,14 @@
   var currentTalk = 0;
 
   function goNextTalk(){
+
+    if(animating){
+      console.log("deny click");
+      return; // 에니메이션 처리 중이면 클릭금지
+    }
+
+    lockButton(); // 클릭금지 시전 (0.5초)
+
     console.log("currentTalk",currentTalk);      
     if(currentTalk == 1){ // 
       currentTalk++; // 다음 스탭으로 넘어감.
