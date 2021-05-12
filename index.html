@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+
+    var animating = false;
+
+    function lockButton(){
+      if(animating == false){
+        animating = true;
+        setTimeout(function () { animating = false }, 500); // 0.5 초 후에 다시 animating = false 처리.
+      }
+    }
+
+    $(document).ready(function () {
+      // 첫 로딩 시 초기화 하는 부분
+
+      $("#start").fadeIn(0);
+      $("#talk").fadeOut(0);
+      $("#exit").fadeOut(0);
+      $("#talk_2").fadeOut(0);
+      $("#choose").fadeOut(0);
+      $("#ending").fadeOut(0);
+      $("#anotherending").fadeOut(0);
+
+      $("#start").click(function () {
+        currentTalk = 1; // 게임 시작 후 첫 화면
+        $("#main").fadeOut(500);
+        $("#exit").fadeIn(500);
+        $("#talk").fadeIn(500);
+        $("#talk_2").fadeOut(500);
+        $("#ending").fadeOut(500);
+        $("#choose").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("start");
+      });
+
+      $(".exit").click(function () {
+        currentTalk = 0; // 초기 메인 화면
+        $("#main").fadeIn(500);
+        $("#exit").fadeOut(500);
+        $("#talk").fadeOut(500);
+        $("#talk_2").fadeOut(500);
+        $("#ending").fadeOut(500);
+        $("#choose").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("exit");
+      });
+
+      $("#chiken").click(function () {
+        currentTalk = 3; // 엔딩
+        $("#ending").fadeIn(500);
+        $("#exit").fadeOut(500);
+        $("#talk").fadeOut(500);
+        $("#talk_2").fadeOut(500);
+        $("#choose").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("exit");
+      });
+
+      $("#hambuger").click(function () {
+        currentTalk = 3; // 엔딩
+        $("#choose").fadeIn(500);
+        $("#exit").fadeOut(500);
+        $("#talk").fadeOut(500);
+        $("#talk_2").fadeOut(500);
+        $("#ending").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("exit");
+      });
+
+      $("#pizza").click(function () {
+        currentTalk = 3; // 엔딩
+        $("#choose").fadeIn(500);
+        $("#exit").fadeOut(500);
+        $("#talk").fadeOut(500);
+        $("#talk_2").fadeOut(500);
+        $("#ending").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("exit");
+      });
+
+      $(".yes").click(function () {
+        currentTalk = 1; // 게임 시작 후 첫 화면
+        $("#main").fadeOut(500);
+        $("#exit").fadeIn(500);
+        $("#talk").fadeIn(500);
+        $("#talk_2").fadeOut(500);
+        $("#ending").fadeOut(500);
+        $("#choose").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("start");
+      });
+
+      $(".no").click(function () {
+        currentTalk = 0; // 초기 메인 화면
+        $("#main").fadeIn(500);
+        $("#exit").fadeOut(500);
+        $("#talk").fadeOut(500);
+        $("#talk_2").fadeOut(500);
+        $("#ending").fadeOut(500);
+        $("#choose").fadeOut(500);
+        $("#anotherending").fadeOut(500);
+        console.log("exit");
+      });
+
+    });
+
+  </script>
+
+  <meta charset="utf-8">
+  <title>미연시</title>
+
+  <style>
+    #name {
+      position: absolute;
+      top: 170px;
+      left: 30px;
+    }
+
+    #text {
+      position: absolute;
+      top: 220px;
+      left: 30px;
+    }
+
+    #percent {
+      position: absolute;
+      top: 30px;
+      left: 70px;
+    }
+
+    #percenttext {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+    }
+    #chiken{
+      position: absolute;
+      top: 50px;
+      left: 270px
+    }
+    #pizza{
+      position: absolute;
+      top: 106px;
+      left: 270px;
+    }
+    #hambuger{
+      position: absolute;
+      top: 162px;
+      left: 270px;
+    }
+    #replay{
+      position: absolute;
+      top: 200px;
+      left: 70px;
+    }
+    .yes{
+      position: absolute;
+      top: 270px;
+      left: 80px;
+    }
+    .no{
+      position: absolute;
+      top: 270px;
+      left: 210px;
+    }
+
+    .exit {
+      position: absolute;
+      top: 400px;
+      left: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 홈 화면 페이지-->
+  <div id="main" style="position: absolute;">
+    <svg width="500" height="400">
+
+      <circle cx="77" cy="110" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="155" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <circle cx="197" cy="110" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="150" y="155" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <circle cx="317" cy="110" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="270" y="155" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <circle cx="437" cy="110" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="390" y="155" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <text x="180" y="50" style="font-size:35; ">미연시 게임</text>
+
+    </svg>
+
+    <div style="text-align: center;">
+      <br /><button id="start" style=" padding:10px 50px 10px 50px; border-radius: 10px">start</button><br />
+      <br /><button id="load" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">불러오기</button><br />
+      <br /><button id="review" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">다시보기</button>
+    </div>
+  </div>
+
+  <!-- 말풍선 나오는 페이지--> 
+  <div id="talk" style="position: absolute;" onclick="goNextTalk()">
+    <svg height="500" width="500">
+
+      <!--사람-->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <!-- 말풍선 -->
+      <rect x="20" y="220" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+      <!-- 이름 말풍선 -->
+      <rect x="20" y="180" width="80" height="40" style="fill:blue;stroke-width:1;stroke:black;" />
+
+    </svg>
+
+    <div id="name">
+      <h2>홍길동</h2>
+    </div>
+
+    <div id="text">
+      <p>혜지짱 어쩌구 저쩌구</p>
+    </div>
+
+    <div id="percent">
+      <progress value="20" max="100" id="lb"></progress>
+    </div>
+
+    <div id="percenttext">
+      <p>호감도</p>
+    </div>
+
+    <div class="exit">
+      <br /><button id="start" style="width:100px; padding:10px 10px 10px 10px; border-radius: 10px">나가기</button><br />
+    </div>
+    
+  </div>
+
+<!--고르는 페이지-->
+  <div id="talk_2" style="position: absolute;" onclick="goNextTalk()">
+    <svg height="500" width="500">
+
+      <!-- 사람 -->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <!-- 말풍선 -->
+      <rect x="20" y="220" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+      <!-- 이름 말풍선 -->
+      <rect x="20" y="180" width="80" height="40" style="fill:blue;stroke-width:1;stroke:black;" />
+
+    </svg>
+
+    <div id="name">
+      <h2>홍길동</h2>
+    </div>
+
+    <div id="text">
+      <p>혜지짱 어떻게 생각해?</p>
+    </div>
+
+    <div id="percent">
+      <progress value="20" max="100" id="lb"></progress>
+    </div>
+
+    <div id="percenttext">
+      <p>호감도</p>
+    </div>
+    
+    <div style="text-align: center;">
+      <br /><button id="chiken" style=" padding:10px 35.5px 10px 35.5px; border-radius: 10px">역시 치킨이지!</button><br />
+      <br /><button id="pizza" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">역시 피자이지!</button><br />
+      <br /><button id="hambuger" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">역시 햄버거지!</button>
+    </div>
+
+    <div class="exit">
+      <br /><button id="start" style="width:100px; padding:10px 10px 10px 10px; border-radius: 10px">나가기</button><br />
+    </div>
+    
+  </div>
+
+  <!--엔딩화면-->
+  <div id="ending" style="position: absolute;">
+    <svg height="500" width="500">
+
+      <!-- 사람 -->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+        <circle cx="197" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="150" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <!-- 말풍선 -->
+      <rect x="20" y="200" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+    
+
+    </svg>
+  
+    <div id="percent">
+      <progress value="100" max="100" id="lb"></progress>
+    </div>
+
+    <div id="percenttext">
+      <p>호감도</p>
+    </div>
+
+    <div id="replay">
+      <h2>게임을 다시 하시겠습니까?</h2>
+    </div>
+    
+    <div style="text-align: center;">
+      <br /><button class="yes" style=" padding:10px 50px 10px 50px; border-radius: 10px">예</button><br />
+      <br /><button class="no" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">아니요</button><br />
+    </div>
+
+    <div class="exit">
+      <br /><button id="start" style="width:100px; padding:10px 10px 10px 10px; border-radius: 10px">나가기</button><br />
+    </div>
+    
+  </div>
+
+  <!--다른 선택지-->
+  <div id="choose" style="position: absolute;" onclick="goNextTalk()">
+    <svg height="500" width="500">
+
+      <!-- 사람 -->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+
+      <!-- 말풍선 -->
+      <rect x="20" y="200" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+    
+
+    </svg>
+  
+    <div id="percent">
+      <progress value="0" max="100" id="lb"></progress>
+    </div>
+
+    <div id="percenttext">
+      <p>호감도</p>
+    </div>
+
+    <div id="text">
+      <p>어떻게 그런걸 좋아할수가 있어..! 실망이야 .. <br> 우리 헤어져!</p>
+    </div>
+
+    <div class="exit">
+      <br /><button id="start" style="width:100px; padding:10px 10px 10px 10px; border-radius: 10px">나가기</button><br />
+    </div> 
+  </div>
+
+   <!-- 다른 엔딩화면-->
+   <div id="anotherending" style="position: absolute;">
+    <svg height="500" width="500">
+
+      <!-- 사람 -->
+      <circle cx="77" cy="100" r="45" stroke="black" stroke-width="2" fill="blue" fill-opacity="0.8" />
+      <rect x="30" y="145" rx="20" ry="20" width="100" height="200"
+        style="fill:rgb(0,0,255);stroke-width:2;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <!-- 말풍선 -->
+      <rect x="20" y="200" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+    </svg>
+  
+    <div id="percent">
+      <progress value="0" max="100" id="lb"></progress>
+    </div>
+
+    <div id="percenttext">
+      <p>호감도</p>
+    </div>
+
+    <div id="replay">
+      <h2>게임을 다시 하시겠습니까?</h2>
+    </div>
+    
+    <div style="text-align: center;">
+      <br /><button class="yes" style=" padding:10px 50px 10px 50px; border-radius: 10px">예</button><br />
+      <br /><button class="no" style=" padding:10px 36.5px 10px 36.5px; border-radius: 10px">아니요</button><br />
+    </div>
+
+    <div class="exit">
+      <br /><button id="start" style="width:100px; padding:10px 10px 10px 10px; border-radius: 10px">나가기</button><br />
+    </div>
+    
+  </div>
+
+</body>
+
+<script>
+
+  var currentTalk = 0;
+
+  function goNextTalk(){
+
+    if(animating){
+      console.log("deny click");
+      return; // 에니메이션 처리 중이면 클릭금지
+    }
+
+    lockButton(); // 클릭금지 시전 (0.5초)
+
+    console.log("currentTalk",currentTalk);      
+    if(currentTalk == 1){ // 
+      currentTalk++; // 다음 스탭으로 넘어감.
+      console.log("Let's goNextTalk");
+      $("#main").fadeOut(500);
+      $("#exit").fadeOut(500);
+      $("#talk").fadeOut(500);
+      $("#choose").fadeOut(500);
+      $("#anotherending").fadeOut(500);
+      $("#ending").fadeOut(500);
+      $("#talk").fadeOut(500);
+      $("#talk_2").fadeIn(500);
+    }
+    else if(currentTalk == 4){ 
+      currentTalk++; 
+      console.log("Let's goNextTalk");
+      $("#main").fadeOut(500);
+      $("#exit").fadeOut(500);
+      $("#talk").fadeOut(500);
+      $("#choose").fadeOut(500);
+      $("#talk_2").fadeOut(500);
+      $("#ending").fadeOut(500);
+      $("#anotherending").fadeIn(500);
+    }
+    else if(currentTalk == 0){
+      currentTalk++;
+    }
+    else if(currentTalk == 3){
+      currentTalk++;
+    }
+    else if(currentTalk == 2){
+      console.log("혜지짱이 원하는 걸 선택해야 합니다.");
+    }
+    else if(currentTalk == 5){
+      console.log("나가기 버튼이나 예,아니요 버튼을 누르세요.");
+    }
+ 
+  }
+</script>
+
+</html>
