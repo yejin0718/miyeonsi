@@ -1,8 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+  <style>
+    .blinking {
+      -webkit-animation: blink 1.0s ease-in-out infinite alternate;
+      -moz-animation: blink 1.0s ease-in-out infinite alternate;
+      animation: blink 1.0s ease-in-out infinite alternate;
+    }
+
+    @-webkit-keyframes blink {
+      0% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @-moz-keyframes blink {
+      0% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes blink {
+      0% {
+        opacity: 0.2;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    #text {
+      position: absolute;
+      top: 490px;
+      left: 130px;
+    }
+
+    #text2 {
+      position: absolute;
+      top: 21px;
+      left: 56px;
+    }
+
+    #text3 {
+      position: absolute;
+      top: 21px;
+      left: 430px;
+    }
+  </style>
 </head>
+
 <body>
-  <button>click</button>
+  <div>
+    <svg width="700" height="700">
+
+      <rect x="200" y="130" rx="" ry="" width="120" height="60" style="fill:gray;fill-opacity:0.8" />
+
+      <rect x="130" y="330" rx="" ry="" width="270" height="60" style="fill:gray;fill-opacity:0.8" />
+
+      <rect x="230" y="188" rx="" ry="" width="60" height="300" style="fill:gray;fill-opacity:0.8" />
+
+      <rect class="blinking" x="100" y="100" rx="" ry="" width="100" height="100"
+        style="fill:yellow;stroke-width:1;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <rect x="320" y="100" rx="" ry="" width="100" height="100"
+        style="fill:yellow;stroke-width:1;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <rect x="30" y="300" rx="" ry="" width="100" height="100"
+        style="fill:yellow;stroke-width:1;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <rect x="400" y="300" rx="" ry="" width="100" height="100"
+        style="fill:yellow;stroke-width:1;stroke:rgb(0,0,0);fill-opacity:0.8" />
+
+      <rect x="90" y="480" width="400" height="130"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+      <rect x="20" y="20" rx="10" ry="10" width="160" height="40"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+      <rect x="380" y="20" rx="10" ry="10" width="160" height="40"
+        style="fill: rgb(247,239,225);stroke-width:1;stroke:blue;fill-opacity:0.4" />
+
+
+    </svg>
+    <div id="text">
+      <p>어디를 갈까?</p>
+    </div>
+
+    <div id="text2">
+      <p>산책을 가자!</p>
+    </div>
+
+    <div id="text3">
+      <p>💗💗💗</p>
+    </div>
+  </div>
 </body>
+
 </html>
