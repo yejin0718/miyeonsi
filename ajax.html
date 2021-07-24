@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+      $(document).ready(function () {
+
+      $("#simple-data").click(function () {
+        $.get("ajax.php", function (data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+          console.log(data);
+        });
+      });
+
+      $("#board-view").click(function () {
+        $.get("./board/view.php", function (data, status) {
+          alert("Data: " + data + "\nStatus: " + status);
+          console.log(data);
+        });
+      });
+
+      $("#test-post").click(function () {
+
+
+        let button_content = $("#test-post").html();
+
+        alert(button_content);
+
+        $("#test-post").html("잘 봐~");
+
+
+        $.post("demo_test_post.php", // 1
+          {
+            name: "Donald Duck",
+            city: "Duckburg"
+          },// 1
+          function (data, status) { // 3
+            alert("Data: " + data + "\nStatus: " + status);
+            console.log(data);
+
+          });// 3
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+
+  <button id="simple-data">simple-data</button>
+  <button id="board-view">board-view</button>
+  <button id="test-post">test-post!!!</button>
+
+</body>
+
+</html>

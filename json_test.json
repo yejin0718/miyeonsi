@@ -1,0 +1,26 @@
+{
+    "programmers": [
+        {
+            "firstName": "Brett",
+            "lastName": "McLaughlin",
+            "email": "brett@newInstance.com"
+        },
+        {
+            "firstName": "Jason",
+            "lastName": "Hunter",
+            "email": "jason@servlets.com"
+        }
+    ],
+    "authors": [
+        {
+            "firstName": "Isaac",
+            "lastName": "Asimov",
+            "genre": "science fiction"
+        },
+        {
+            "firstName": "Frank",
+            "lastName": "Peretti",
+            "genre": "christian fiction"
+        }
+    ]
+}
